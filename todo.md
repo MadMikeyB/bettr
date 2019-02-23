@@ -17,9 +17,11 @@ To create a website which enables the user to:
 -- Create
 --- API ✅
 -- Read
+--- API ✅
 -- Update
 --- API ✅
 -- Delete
+--- API ✅
 
 - Targets
 -- Create
