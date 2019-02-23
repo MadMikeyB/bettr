@@ -20,3 +20,9 @@ Route::prefix('goals')->namespace('Goal')->group(function() {
     Route::get('/', 'GoalController@index')->name('api.goals.index');
     Route::get('/{goal}', 'GoalController@show')->name('api.goals.show');
 });
+
+Route::prefix('targets')->namespace('Target')->group(function() {
+    Route::post('/', 'TargetController@store')->name('api.targets.store');
+
+});
+
