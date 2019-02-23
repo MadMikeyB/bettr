@@ -1,0 +1,44 @@
+.icon-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+    text-align: center;
+
+    &--left {
+        text-align: left;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &__title {
+        display: block;
+        font-size: 2rem;
+        margin: 0.5rem 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+
+    &__icon {
+        align-items: center;
+        background-image: $gradient;
+        border-radius: 5rem;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        height: 5rem;
+        justify-content: center;
+        width: 5rem;
+
+        i {
+            font-size: 2.5rem;
+        }
+    }
+}

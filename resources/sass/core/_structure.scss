@@ -1,0 +1,164 @@
+/*-- STRUCTURE --*/
+
+.wrapper {
+    @extend .clear;
+
+    max-width: $med;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.wrapper-sm {
+    max-width: $tablet;
+    width: 95%;
+    margin: 0 auto;
+}
+
+// helper for `anything`__container
+[class*='__container'], [class*='__wrapper'] {
+    @extend .wrapper;
+}
+
+[class*='__flex-container'] {
+    @extend .wrapper;
+
+    display: flex;
+
+    @media all and (max-width: $tablet) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+[class*='__flex-container--small'] {
+    @extend .wrapper-sm;
+
+    display: flex;
+
+    @media all and (max-width: $tablet) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+[class*='__container--small'], [class*='__container--slim'] {
+    @extend .wrapper-sm;
+}
+
+// Grid wrapper using flex + BEM
+.grid {
+    // Define the flex container
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item-4-col {
+        width: 23.5%;
+        margin-right: 2%;
+
+        @media (min-width: $med) {
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $med) {
+            width: 49%;
+
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $mob) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__item-3-col {
+        width: 32%;
+        margin-right: 2%;
+        margin-bottom: 1.5em;
+
+        @media (min-width: $med) {
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $med) {
+            width: 49%;
+
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $mob) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__item-2-col {
+        width: 49%;
+        margin-right: 2%;
+        margin-bottom: 1.5em;
+
+        @media (min-width: $mob) {
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $mob) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}
+
+// CSS Grid
+$gridcolumns: 12;
+$class: grid;
+
+// loops through 100 times
+@for $i from 1 through $gridcolumns {
+    .#{$class}--#{$i} {
+        /* autoprefixer: off */
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat($i, 1fr);
+        width: 100%;
+
+        @media (max-width: $tablet) {
+            /* autoprefixer: off */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $mob) {
+            /* autoprefixer: off */
+            grid-template-columns: 1fr;
+        }
+    }
+
+    [data-grid-columns="#{$i}"] {
+        /* autoprefixer: off */
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat($i, 1fr);
+        width: 100%;
+
+        @media (max-width: $tablet) {
+            /* autoprefixer: off */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $mob) {
+            /* autoprefixer: off */
+            grid-template-columns: 1fr;
+        }
+    }
+}

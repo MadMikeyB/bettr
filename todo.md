@@ -36,7 +36,7 @@ To create a website which enables the user to:
 - Profiles
 -- Show Friends ✅
 -- Show Goals ✅
--- Show Comments
+-- Show Comments ✅
 -- Show User Information ✅
 
 - Progress
@@ -49,3 +49,5 @@ To create a website which enables the user to:
 
 - News Feed
 
+
+Remix a goal

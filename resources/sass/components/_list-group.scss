@@ -1,0 +1,33 @@
+// ul:not(.menu) {
+//     margin: 0.75em 0;
+//     padding: 0 1em;
+//     list-style: none;
+
+//     li:before {
+//         content: "";
+//         border-color: transparent $primary;
+//         border-style: solid;
+//         border-width: 0.35rem 0 0.35rem 0.45rem;
+//         display: block;
+//         height: 0;
+//         width: 0;
+//         left: -1em;
+//         top: 1em;
+//         position: relative;
+//     }
+
+//     &.dark-bullets {
+//         li:before {
+//             content: "";
+//             border-color: transparent $tertiary;
+//             border-style: solid;
+//             border-width: 0.35rem 0 0.35rem 0.45rem;
+//             display: block;
+//             height: 0;
+//             width: 0;
+//             left: -1em;
+//             top: 1em;
+//             position: relative;
+//         }
+//     }
+// }

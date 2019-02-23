@@ -1,0 +1,81 @@
+/*
+    Name: Bettr
+    License: CC-BY-SA
+    Author: Michael Burton
+*/
+
+// Base Colours
+$black: #000;
+$offblack: #333;
+$white: #FFF;
+$offwhite: #EEE;
+
+// BETTER VARIABLE NAMES
+// Primary
+$primary: #4D99E0;
+$primary-light: lighten($primary, 5%);
+$primary-lighter: lighten($primary, 10%);
+$primary-lightest: lighten($primary, 15%);
+$primary-dark: darken($primary, 5%);
+$primary-darker: darken($primary, 10%);
+$primary-darkest: darken($primary, 15%);
+
+// Secondary
+$secondary: #B721FF;
+$secondary-light: lighten($secondary, 5%);
+$secondary-lighter: lighten($secondary, 10%);
+$secondary-lightest: lighten($secondary, 15%);
+$secondary-dark: darken($secondary, 5%);
+$secondary-darker: darken($secondary, 10%);
+$secondary-darkest: darken($secondary, 15%);
+
+// Tertiary
+$tertiary: #f3b479;
+$tertiary-light: lighten($tertiary, 5%);
+$tertiary-lighter: lighten($tertiary, 10%);
+$tertiary-lightest: lighten($tertiary, 15%);
+$tertiary-dark: darken($tertiary, 5%);
+$tertiary-darker: darken($tertiary, 10%);
+$tertiary-darkest: darken($tertiary, 15%);
+
+$gradient: linear-gradient(25deg, $primary 0%, $secondary 100%);
+$inverted_gradient: linear-gradient(25deg, $secondary 0%, $primary 100%);
+
+$alt_gradient: linear-gradient(25deg, #FBDA61 0%, #FF5ACD 100%);
+
+$inverted_alt_gradient: linear-gradient(25deg, #FF5ACD 0%, #FBDA61 100%);
+
+// SOCIAL NETWORK
+$facebook: #365397;
+$twitter: #00a9f1;
+$google: #4285f4;
+$youtube: #ff3333;
+$tumblr: #304c68;
+$twitch: #6441a5;
+$discord: #7289da;
+
+// MEDIA QUERIES
+$lrg: 1200px;
+$med: 993px;
+$sm: 769px;
+$exsm: 481px;
+$iphone: 321px;
+
+// ALIAS THE SIZES FOR EASE OF READING
+$desktop: $lrg;
+$laptop: $med;
+$tablet: $sm;
+$phone: $exsm;
+$mob: $exsm;
+
+// FONTS
+$fontfamily: "Source Sans Pro", Helvetica Neue, Arial, sans-serif;
+$fontsize: 16px;
+$fontweight: 300;
+$headingfont: "Noto Sans", Helvetica Neue, Arial, sans-serif;
+
+// ANIMATE CONFIG
+// $use-fadeIn: true;
+// $use-fadeInUp: true;
+// $use-slideInRight: true;
+// $use-slideInLeft: true;

@@ -1,0 +1,8 @@
+.website {
+    margin-top: -10rem;
+
+    &__flex-container {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,320 @@
+/*-- FORMS --*/
+
+::-webkit-input-placeholder {
+    color: $offblack;
+    font-weight: 400;
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: $offblack;
+    font-weight: 400;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $offblack;
+    font-weight: 400;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: $offblack;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__label {
+        color: $offblack;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 1rem 0;
+
+        &[aria-hidden="true"] {
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+        }
+    }
+
+    &__required {
+        color: $primary;
+        font-size: 2rem;
+        font-weight: 100;
+        line-height: 0;
+    }
+
+    &__input {
+        appearance: none;
+        border: 1px solid $offblack;
+        font: 500 $fontsize $fontfamily;
+        padding: 1.5rem 1rem;
+        transition: all 0.25s ease-in-out;
+        width: 100%;
+
+        &--small {
+            padding: 0.5rem;
+        }
+
+        &--has-errors {
+            border-color: $primary;
+        }
+
+        &:hover {
+            appearance: none;
+            border: 1px solid $secondary;
+            outline: none;
+        }
+
+        &:focus {
+            border: 1px solid $secondary;
+        }
+    }
+
+    &__select {
+        appearance: none;
+        border: 1px solid $offblack;
+        border-radius: 0;
+        border-radius: none;
+        font: 500 $fontsize $fontfamily;
+        padding: 1.5rem 1rem;
+        transition: all 0.25s ease-in-out;
+        width: 100%;
+
+        &--small {
+            padding: 0.5rem;
+        }
+
+        &--has-errors {
+            border-color: $primary;
+        }
+
+        &:hover {
+            appearance: none;
+            border: 1px solid $primary;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+
+    &__textarea {
+        appearance: none;
+        border: 1px solid $offblack;
+        font: 500 $fontsize $fontfamily;
+        padding: 1.5rem 1rem;
+        transition: all 0.25s ease-in-out;
+        width: 100%;
+        height: 200px;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 200px;
+        max-height: 300px;
+
+        &--small {
+            padding: 0.5rem;
+        }
+
+        &--has-errors {
+            border-color: $primary;
+        }
+
+        &:hover {
+            appearance: none;
+            border: 1px solid $primary;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+
+    &__split-input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .form__input {
+            margin-right: 1rem;
+            width: calc(70% - 1rem);
+        }
+
+        .form__addon {
+            width: 30%;
+        }
+    }
+
+    &__checkbox {
+        appearance: none;
+        border: 1px solid $offblack;
+        height: 2.5rem;
+        width: 2.5rem;
+
+        &:checked {
+            position: relative;
+
+            &:before {
+                color: $primary;
+                content: '\f00c';
+                display: block;
+                font-family: "Font Awesome\ 5 Free";
+                font-size: 1.5rem;
+                font-weight: 900;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            background-color: lighten($primary, 10%);
+        }
+    }
+
+    &__help-text {
+        color: $primary;
+        cursor: pointer;
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin: 0.5rem 0;
+        text-align: right;
+        text-decoration: underline;
+        width: 100%;
+    }
+
+    &__submit {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .button {
+            border: 0;
+            cursor: pointer;
+            font-size: 2rem;
+            width: 100%;
+
+            i {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__errors {
+        background-color: $primary;
+        color: $white;
+        display: block;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    legend {
+        color: $white;
+        display: flex;
+        font-size: 4rem;
+        font-weight: 600;
+        margin: 1rem 0;
+        text-transform: uppercase;
+        width: 100%;
+
+        .form__required {
+            line-height: 1.2rem;
+        }
+    }
+
+    &__group, &__radio {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        width: 100%;
+
+        &--checkbox {
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .form__checkbox {
+                order: 1;
+                margin-right: 2rem;
+            }
+
+            .form__label {
+                font-weight: 300;
+                order: 2;
+                width: 75%;
+            }
+        }
+
+        &--side-label {
+            @media all and (min-width: $tablet) {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                .form__label {
+                    font-weight: 300;
+                    width: 25%;
+                }
+
+                .form__input {
+                    width: 75%;
+                }
+            }
+        }
+
+        &--half {
+            + .form__group--half {
+                &:nth-of-type(2n - 1) {
+                    margin-left: 1rem;
+                    width: calc(50% - 1rem);
+
+                    @media all and (max-width: $tablet) {
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                }
+
+                @media all and (max-width: $tablet) {
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+
+            width: 50%;
+
+            @media all and (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+
+        &--thirds {
+            + .form__group--thirds {
+                margin-left: 1rem;
+                width: calc(33.333% - 1rem);
+
+                @media all and (max-width: $tablet) {
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+
+            width: 33.333%;
+
+            @media all and (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+input[disabled] {
+    cursor: not-allowed !important;
+}
+
+input:focus {
+    outline: 0;
+}
