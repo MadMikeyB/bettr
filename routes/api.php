@@ -23,6 +23,7 @@ Route::prefix('goals')->namespace('Goal')->group(function() {
 
 Route::prefix('targets')->namespace('Target')->group(function() {
     Route::post('/', 'TargetController@store')->name('api.targets.store');
+    Route::patch('/{target}', 'TargetController@update')->name('api.targets.update');
 
 });
 

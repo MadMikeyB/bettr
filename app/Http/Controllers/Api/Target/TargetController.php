@@ -33,7 +33,7 @@ class TargetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Target $target
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -45,18 +45,23 @@ class TargetController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Target $target
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TargetRequest $request, Target $target)
     {
-        //
+        if (auth()->id() === $target->user_id) {
+            $target->update($request->all());
+            return $target;
+        }
+
+        return response()->json(['error' => true], 403);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Target $target
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
