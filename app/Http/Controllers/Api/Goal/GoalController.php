@@ -50,8 +50,12 @@ class GoalController extends Controller
      */
     public function update(GoalRequest $request, Goal $goal)
     {
-        $goal->update($request->all());
-        return $goal;
+        if (auth()->id() === $goal->user_id) {
+            $goal->update($request->all());
+            return $goal;
+        }
+
+        return response()->json(['error' => true], 403);
     }
 
     /**

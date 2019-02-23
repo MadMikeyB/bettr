@@ -9,5 +9,15 @@ class Goal extends Model
 {
     use SoftDeletes;
 
+    /**
+     * 
+     */
     public $guarded = ['id'];
+
+    /**
+     * 
+     */
+    public $casts = [
+        'user_id' => 'int'
+    ];
 }

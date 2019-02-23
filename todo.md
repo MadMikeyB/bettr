@@ -15,8 +15,10 @@ To create a website which enables the user to:
 
 - Goals
 -- Create
+--- API ✅
 -- Read
 -- Update
+--- API ✅
 -- Delete
 
 - Targets

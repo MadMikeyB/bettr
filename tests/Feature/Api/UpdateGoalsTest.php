@@ -13,6 +13,7 @@ class UpdateGoalsTest extends TestCase
     /** @test */
     public function an_authorised_user_may_update_their_own_goal()
     {
+        $this->withExceptionHandling();
         // Given I have a user
         $user = factory(\App\Models\User::class)->create();
         // who is signed in
@@ -27,6 +28,22 @@ class UpdateGoalsTest extends TestCase
         $this->assertDatabaseHas('goals', $goal->toArray());
         // and i should receive the goal back 
         $response->assertJson($goal->toArray());
+    }
+
+    /** @test */
+    public function an_authorised_user_may_only_update_goals_which_they_have_permission_to_update()
+    {
+        // Given I have a user
+        $user = factory(\App\Models\User::class)->create();
+        // who is signed in
+        $this->signIn($user);
+        // Who tries to modify a goal they do not own
+        $goal = factory(\App\Models\Goal::class)->create(['user_id' => 1337]);
+        $goal->description = 'Modified';
+        // when we submit a patch request to the update api endpoint
+        $response = $this->patch(route('api.goals.update', $goal), $goal->toArray());
+        // I should be unauthorised
+        $response->assertStatus(403);
     }
 
     /** @test */
