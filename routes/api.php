@@ -33,6 +33,8 @@ Route::prefix('comments')->namespace('Comment')->group(function() {
     Route::post('/', 'CommentController@store')->name('api.comments.store');
     Route::patch('/{comment}', 'CommentController@update')->name('api.comments.update');
     Route::delete('/{comment}', 'CommentController@destroy')->name('api.comments.destroy');
+    Route::get('/', 'CommentController@index')->name('api.comments.index');
+    Route::get('/{comment}', 'CommentController@show')->name('api.comments.show');
 });
 
 Route::prefix('profiles')->namespace('Profile')->group(function() {
