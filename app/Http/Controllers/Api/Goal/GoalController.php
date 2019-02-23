@@ -16,7 +16,7 @@ class GoalController extends Controller
      */
     public function index()
     {
-        //
+        return Goal::all();
     }
 
     /**

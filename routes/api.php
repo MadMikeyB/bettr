@@ -13,13 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 Route::prefix('goals')->namespace('Goal')->group(function() {
     Route::post('/', 'GoalController@store')->name('api.goals.store');
     Route::patch('/{goal}', 'GoalController@update')->name('api.goals.update');
     Route::delete('/{goal}', 'GoalController@destroy')->name('api.goals.destroy');
+    Route::get('/', 'GoalController@index')->name('api.goals.index');
     Route::get('/{goal}', 'GoalController@show')->name('api.goals.show');
 });

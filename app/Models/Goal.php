@@ -20,4 +20,14 @@ class Goal extends Model
     public $casts = [
         'user_id' => 'int'
     ];
+
+    /**
+     * A project belongs to a user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
