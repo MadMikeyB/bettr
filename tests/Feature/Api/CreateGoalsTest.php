@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Api;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -13,7 +13,6 @@ class CreateGoalsTest extends TestCase
     /** @test */
     public function an_authenticated_user_may_create_a_goal()
     {
-        $this->withoutExceptionHandling();
         // Given I have a user
         $user = factory(\App\Models\User::class)->create();
         // And i sign in
@@ -26,5 +25,16 @@ class CreateGoalsTest extends TestCase
         $this->assertDatabaseHas('goals', $goal->toArray());
         // and the api returns the goal
         $response->assertJson($goal->toArray());
+    }
+
+    /** @test */
+    public function an_unauthenticated_user_may_not_create_a_goal()
+    {
+        //given i have a goal
+        $goal = factory(\App\Models\Goal::class)->make();
+        // when i post it to the goals api endpoint
+        $response = $this->post(route('api.goals.store'), $goal->toArray());
+        // i assert the response code is 401
+        $response->assertStatus(403);
     }
 }
