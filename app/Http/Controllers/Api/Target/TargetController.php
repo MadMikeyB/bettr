@@ -64,8 +64,13 @@ class TargetController extends Controller
      * @param  \App\Models\Target $target
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Target $target)
     {
-        //
+        if (auth()->id() === $target->user_id) {
+            $target->delete();
+            return response()->json(['error' => false], 204);
+        }
+
+        return response()->json(['error' => true], 403);
     }
 }
