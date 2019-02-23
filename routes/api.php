@@ -29,8 +29,14 @@ Route::prefix('targets')->namespace('Target')->group(function() {
     Route::get('/{target}', 'TargetController@show')->name('api.targets.show');
 });
 
+Route::prefix('comments')->namespace('Comment')->group(function() {
+    Route::post('/', 'CommentController@store')->name('api.comments.store');
+});
 
 Route::prefix('profiles')->namespace('Profile')->group(function() {
+
+    Route::get('/{user}', 'ProfileController@show')->name('api.profiles.show');
+
     Route::prefix('goals')->group(function() {
         Route::get('/{user}', 'GoalController@show')->name('api.profiles.goals.show');
     });
