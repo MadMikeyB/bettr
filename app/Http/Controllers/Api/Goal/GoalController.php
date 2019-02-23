@@ -48,9 +48,10 @@ class GoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(GoalRequest $request, Goal $goal)
     {
-        //
+        $goal->update($request->all());
+        return $goal;
     }
 
     /**
