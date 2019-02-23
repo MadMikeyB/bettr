@@ -25,9 +25,13 @@ To create a website which enables the user to:
 
 - Targets
 -- Create
+--- API ✅
 -- Read
+--- API ✅
 -- Update
+--- API ✅
 -- Delete
+--- API ✅
 
 - Progress
 
