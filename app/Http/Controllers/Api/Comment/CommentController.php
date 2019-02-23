@@ -48,9 +48,14 @@ class CommentController extends Controller
      * @param  \App\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(CommentRequest $request, Comment $comment)
     {
-        //
+        if (auth()->id() === $comment->user_id) {
+            $comment->update($request->all());
+            return $comment;
+        }
+
+        return response()->json(['error' => true], 403);
     }
 
     /**

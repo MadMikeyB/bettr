@@ -31,6 +31,7 @@ Route::prefix('targets')->namespace('Target')->group(function() {
 
 Route::prefix('comments')->namespace('Comment')->group(function() {
     Route::post('/', 'CommentController@store')->name('api.comments.store');
+    Route::patch('/{comment}', 'CommentController@update')->name('api.comments.update');
 });
 
 Route::prefix('profiles')->namespace('Profile')->group(function() {
