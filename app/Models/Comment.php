@@ -21,4 +21,14 @@ class Comment extends Model
         'user_id' => 'int',
         'model_id' => 'int'
     ];
+
+    /**
+     * Get all of the owning commentable models.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function commentable()
+    {
+        return $this->morphTo();
+    }
 }

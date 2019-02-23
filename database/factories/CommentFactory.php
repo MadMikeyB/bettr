@@ -7,7 +7,7 @@ $factory->define(App\Models\Comment::class, function (Faker $faker) {
     return [
         'user_id' => $goal->user_id,
         'comment' => $faker->paragraph,
-        'model_id' => $goal->id,
-        'model_type' => get_class($goal)
+        'commentable_id' => $goal->id,
+        'commentable_type' => get_class($goal)
     ];
 });

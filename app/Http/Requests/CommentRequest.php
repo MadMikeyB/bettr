@@ -26,8 +26,8 @@ class CommentRequest extends FormRequest
         return [
             'user_id' => 'required|exists:users,id',
             'comment' => 'required',
-            'model_id' => 'required',
-            'model_type' => 'required'
+            'commentable_id' => 'required',
+            'commentable_type' => 'required'
         ];
     }
 }
