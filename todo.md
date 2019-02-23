@@ -35,7 +35,7 @@ To create a website which enables the user to:
 
 - Profiles
 -- Show Friends
--- Show Goals
+-- Show Goals ✅
 -- Show Comments
 -- Show User Information
 

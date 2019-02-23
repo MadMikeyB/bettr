@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Goal::class);
     }
+
+    /**
+     * A user has many friends
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
+     */
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id')->wherePivot('accepted', '=', 1);
+    }
 }

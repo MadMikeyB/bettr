@@ -18,4 +18,17 @@ class UserTest extends TestCase
 
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $user->goals);
     }
+
+    /** @test */
+    public function it_has_friends()
+    {
+        $user = factory(\App\Models\User::class)->create();
+        $friend = factory(\App\Models\User::class)->create();
+        $friends = factory(\App\Models\Friend::class)->create([
+            'user_id' => $user->id, 
+            'friend_id' => $friend->id
+        ]);
+
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $user->friends);
+    }
 }
