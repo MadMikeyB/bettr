@@ -41,4 +41,15 @@ class DeleteGoalsTest extends TestCase
         // assert the status code is 403
         $response->assertStatus(403);
     }
+
+    /** @test */
+    public function an_unauthorised_user_may_not_delete_goals()
+    {
+        // given i have a goal
+        $goal = factory(\App\Models\Goal::class)->create();
+        // and a hacker wants to delete it
+        $response = $this->delete(route('api.goals.destroy', $goal));
+        // they should be denied with great vengeance
+        $response->assertStatus(403);
+    }
 }
