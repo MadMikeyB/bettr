@@ -34,10 +34,10 @@ To create a website which enables the user to:
 --- API ✅
 
 - Profiles
--- Show Friends
+-- Show Friends ✅
 -- Show Goals ✅
 -- Show Comments
--- Show User Information
+-- Show User Information 
 
 - Progress
 
