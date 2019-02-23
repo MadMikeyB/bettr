@@ -13,8 +13,6 @@ class CreateCommentTest extends TestCase
     /** @test */
     public function an_authorised_user_may_create_a_comment()
     {
-        $this->withoutExceptionHandling();
-
         // Given I have a user
         $user = factory(\App\Models\User::class)->create();
         // Who is signed in
@@ -27,5 +25,17 @@ class CreateCommentTest extends TestCase
         $this->assertDatabaseHas('comments', $comment->toArray());
         // and returned back to me
         $response->assertStatus(201)->assertJson($comment->toArray());
+    }
+
+    /** @test */
+    public function an_unauthorised_user_may_not_create_a_comment()
+    {
+        // Given I have a guest
+        // Who wants to make a comment
+        $comment = factory(\App\Models\Comment::class)->make();
+        // When I submit an API request to store a comment
+        $response = $this->post(route('api.comments.store'), $comment->toArray());
+        // I should be unauthorised
+        $response->assertStatus(403);
     }
 }
