@@ -29,3 +29,9 @@ Route::prefix('targets')->namespace('Target')->group(function() {
     Route::get('/{target}', 'TargetController@show')->name('api.targets.show');
 });
 
+
+Route::prefix('profiles')->namespace('Profile')->group(function() {
+    Route::prefix('goals')->group(function() {
+        Route::get('/{user}', 'GoalController@show')->name('api.profiles.goals.show');
+    });
+});

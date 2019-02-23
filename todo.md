@@ -3,8 +3,8 @@
 ## Goals 
 
 To create a website which enables the user to:
-- Set themselves goals which they would like to complete.
-- Set themselves an optional target timeframe in which to complete those goals.
+- Set themselves goals which they would like to complete. ✅
+- Set themselves an optional target (with timeframe) in which to complete those goals. ✅
 - Track the progress of their goals.
 - Earn achievements / badges / trophies upon completion of stages of a goal. 
 - Follow friends and see their achievements and progress through their own goals.
@@ -32,6 +32,12 @@ To create a website which enables the user to:
 --- API ✅
 -- Delete
 --- API ✅
+
+- Profiles
+-- Show Friends
+-- Show Goals
+-- Show Comments
+-- Show User Information
 
 - Progress
 

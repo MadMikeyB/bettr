@@ -83,16 +83,6 @@
                 <div class="title m-b-md">
                     bettr
                 </div>
-
-                <div class="links">
-                    <a href="https://bettr.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://bettr-news.com">News</a>
-                    <a href="https://blog.bettr.com">Blog</a>
-                    <a href="https://nova.bettr.com">Nova</a>
-                    <a href="https://forge.bettr.com">Forge</a>
-                    <a href="https://github.com/bettr/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
