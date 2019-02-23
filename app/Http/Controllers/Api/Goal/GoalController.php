@@ -66,7 +66,11 @@ class GoalController extends Controller
      */
     public function destroy(Goal $goal)
     {
-        $goal->delete();
-        return response()->json(['error' => false], 204);
+        if (auth()->id() === $goal->user_id) {
+            $goal->delete();
+            return response()->json(['error' => false], 204);
+        }
+
+        return response()->json(['error' => true], 403);
     }
 }
