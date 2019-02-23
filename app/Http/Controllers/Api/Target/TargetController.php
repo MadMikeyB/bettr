@@ -16,7 +16,7 @@ class TargetController extends Controller
      */
     public function index()
     {
-        //
+        return Target::all();
     }
 
     /**
@@ -36,9 +36,9 @@ class TargetController extends Controller
      * @param  \App\Models\Target $target
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Target $target)
     {
-        //
+        return $target;
     }
 
     /**

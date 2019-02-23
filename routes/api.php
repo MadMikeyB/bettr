@@ -25,5 +25,7 @@ Route::prefix('targets')->namespace('Target')->group(function() {
     Route::post('/', 'TargetController@store')->name('api.targets.store');
     Route::patch('/{target}', 'TargetController@update')->name('api.targets.update');
     Route::delete('/{target}', 'TargetController@destroy')->name('api.targets.destroy');
+    Route::get('/', 'TargetController@index')->name('api.targets.index');
+    Route::get('/{target}', 'TargetController@show')->name('api.targets.show');
 });
 
