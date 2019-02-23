@@ -45,6 +45,10 @@ Route::prefix('profiles')->namespace('Profile')->group(function() {
         Route::get('/{user}', 'GoalController@show')->name('api.profiles.goals.show');
     });
 
+    Route::prefix('comments')->group(function() {
+        Route::get('/{user}', 'CommentController@show')->name('api.profiles.comments.show');
+    });
+
     Route::prefix('friends')->group(function() {
         Route::get('/{user}', 'FriendController@show')->name('api.profiles.friends.show');
     });

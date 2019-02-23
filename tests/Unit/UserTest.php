@@ -31,4 +31,13 @@ class UserTest extends TestCase
 
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $user->friends);
     }
+
+    /** @test */
+    public function it_has_comments()
+    {
+        $user = factory(\App\Models\User::class)->create();
+        $comments = factory(\App\Models\Comment::class, 25)->create(['user_id' => $user->id]);
+
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $user->comments);
+    }
 }
