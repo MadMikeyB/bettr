@@ -11,6 +11,11 @@ window.Vue = require('vue');
 import VueQuill from 'vue-quill'
 import VeeValidate from 'vee-validate';
 import moment from 'moment'
+import VCalendar from 'v-calendar';
+import 'v-calendar/lib/v-calendar.min.css';
+
+// Use v-calendar, v-date-picker & v-popover components
+Vue.use(VCalendar)
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,7 +35,7 @@ Vue.mixin({
     }
 });
 Vue.use(VueQuill)
-Vue.use(VeeValidate);
+Vue.use(VeeValidate)
 Vue.prototype.moment = moment
 
 /**

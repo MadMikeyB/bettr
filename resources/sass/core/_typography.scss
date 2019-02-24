@@ -77,3 +77,9 @@ h1 > small {
 .fa, .fab, .fal, .far, .fas {
     margin: 0.5rem 0;
 }
+
+blockquote {
+    border-left: 2px solid $primary;
+    margin: 0;
+    padding-left: 2rem;
+}

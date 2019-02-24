@@ -25,7 +25,7 @@ class Goal extends Model
     /**
      * @var array The attributes passed to the JSON response
      */
-    public $appends = ['excerpt'];
+    public $appends = ['excerpt', 'closest_target_date'];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -60,6 +60,16 @@ class Goal extends Model
     }
 
     /**
+     * A goal has many targets
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function targets()
+    {
+        return $this->hasMany(Target::class);
+    }
+
+    /**
      * Get the excerpt Attribute
      * 
      * @return string
@@ -67,5 +77,25 @@ class Goal extends Model
     public function getExcerptAttribute()
     {
         return str_limit(strip_tags($this->description), 80);
+    }
+
+    /**
+     * Get the excerpt Attribute
+     * 
+     * @return string
+     */
+    public function getClosestTargetDateAttribute()
+    {
+        if (!$this->targets->isEmpty()) {
+            return optional(
+                $this->targets->reject(function($target) {
+                    return is_null($target->complete_by);
+                })->reject(function($target) {
+                    return !is_null($target->completed_at);
+                })
+                ->sortBy('complete_by')
+                ->first()
+            )->complete_by;
+        }
     }
 }

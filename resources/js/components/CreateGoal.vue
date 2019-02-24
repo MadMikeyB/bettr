@@ -51,7 +51,7 @@
             </div>
         </article>                
         <aside>
-            <div class="box" v-if="data.icon">
+            <div class="box">
                 <h2 class="box__title">Preview</h2>
                 <div class="box__content">
                     <div class="card">

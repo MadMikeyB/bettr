@@ -1,0 +1,57 @@
+.target {
+    margin: 0.25rem 0;
+
+    &:last-of-type {
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: $tertiary-darkest;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 0.25rem 0;
+    }
+
+    &--completed {
+        a {
+            color: $green;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+
+    &__complete-by {
+        font-style: oblique;
+        font-weight: 300;
+        color: lighten($offblack, 40%);
+    }
+}
+
+.target-input {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    .form__input {
+        border-right: 0;
+        width: 90%;
+    }
+
+    .form__addon {
+        background-image: $inverted_gradient;
+        border: 1px solid $offblack;
+        border-left: 0;
+        padding: 1.45rem 1rem;
+        text-align: center;
+        transition: all 0.25s ease-in-out;
+        width: 10%;
+
+        i {
+            color: $white;
+            font-size: 2rem;
+            margin: 0;
+        }
+    }
+}

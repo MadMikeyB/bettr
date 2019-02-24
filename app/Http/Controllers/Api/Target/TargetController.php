@@ -14,8 +14,12 @@ class TargetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->has('goal_id')) {
+            return Target::where('goal_id', $request->goal_id)->latest('created_at')->get();
+        }
+
         return Target::all();
     }
 
@@ -27,7 +31,12 @@ class TargetController extends Controller
      */
     public function store(TargetRequest $request)
     {
-        return Target::create($request->all());
+        $target = Target::create($request->except('complete_by'));
+        if ($request->has('complete_by')) {
+            $completeBy = now()->parse($request->complete_by)->toDateTimeString();
+            $target->update(['complete_by' => $completeBy]);
+        }
+        return $target;
     }
 
     /**

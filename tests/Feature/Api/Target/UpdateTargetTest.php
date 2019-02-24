@@ -23,7 +23,7 @@ class UpdateTargetTest extends TestCase
         // who has a target
         $target = factory(\App\Models\Target::class)->create(['user_id' => $user->id, 'goal_id' => $goal->id]);
         // who wants to modify that target
-        $target->description = 'Modified';
+        $target->title = 'Modified';
         // when we submit a patch request to the update api endpoint
         $response = $this->patch(route('api.targets.update', $target), $target->toArray());
         // it should be persisted in the database
@@ -46,7 +46,7 @@ class UpdateTargetTest extends TestCase
         $secondUser = factory(\App\Models\User::class)->create();
         // and the first user tries to modify a target they do not own
         $target = factory(\App\Models\Target::class)->create(['user_id' => $secondUser->id, 'goal_id' => $goal->id]);
-        $target->description = 'Modified';
+        $target->title = 'Modified';
         // when we submit a patch request to the update api endpoint
         $response = $this->patch(route('api.targets.update', $target), $target->toArray());
         // I should be unauthorised
@@ -61,7 +61,7 @@ class UpdateTargetTest extends TestCase
         // Who has a goal
         $goal = factory(\App\Models\Goal::class)->create();
         // and i modify it somehow
-        $target->description = 'Hi2u';
+        $target->title = 'Hi2u';
         // when we submit a patch request to the update api endpoint
         $response = $this->patch(route('api.targets.update', $target), $target->toArray());
         // I should be unauthorised

@@ -25,7 +25,6 @@ class TargetRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'description' => 'required',
             'user_id' => 'required|exists:users,id',
             'goal_id' => 'required|exists:goals,id'
         ];

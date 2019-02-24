@@ -20,10 +20,12 @@
         "moment": "^2.24.0",
         "node-sass": "^4.11.0",
         "sass": "^1.17.0",
+        "v-calendar": "^0.9.7",
         "vee-validate": "^2.1.7",
         "vue": "^2.5.17",
         "vue-invisible-recaptcha": "^0.2.1",
-        "vue-quill": "^1.5.1"
+        "vue-quill": "^1.5.1",
+        "vue2-datepicker": "^2.10.0"
     },
     "devDependencies": {
         "animate-sass": "^0.8.2",
