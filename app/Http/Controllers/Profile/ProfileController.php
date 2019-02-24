@@ -47,6 +47,7 @@ class ProfileController extends Controller
      */
     public function show(User $user)
     {
+        $this->seo()->setTitle($user->name);
         return view('profiles.show', compact('user'));
     }
 

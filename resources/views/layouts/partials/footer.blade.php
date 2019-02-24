@@ -4,9 +4,13 @@
             <div class="footer__col">
                 <p><strong>Bettr.</strong></p>
                 <ul>
-                    <li><a href="">Log In</a></li>
-                    <li><a href="">How It Works</a></li>
-                    <li><a href="">Join Free</a></li>
+                    @auth
+                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a></li>
+                    <li><a href="{{route('static.how-it-works')}}">How It Works</a></li>
+                    @else
+                    <li><a href="{{route('login')}}">Log In</a></li>
+                    <li><a href="{{route('register')}}">Join Free</a></li>
+                    @endauth
                 </ul>
             </div>
             <div class="footer__col">
@@ -22,4 +26,7 @@
             </div>
         </div>
     </div>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </footer>

@@ -20,6 +20,7 @@ class GoalController extends Controller
      */
     public function index()
     {
+        $this->seo()->setTitle('All Goals');
         return view('goals.index');
     }
 
@@ -30,6 +31,7 @@ class GoalController extends Controller
      */
     public function create()
     {
+        $this->seo()->setTitle('Create New Goal');
         return view('goals.create');
     }
 
@@ -41,6 +43,8 @@ class GoalController extends Controller
      */
     public function show(Goal $goal)
     {
+        $this->seo()->setTitle($goal->title);
+        $this->seo()->setDescription($goal->excerpt);
         return view('goals.show', compact('goal'));
     }
 

@@ -16,6 +16,8 @@ Route::view('/', 'pages.front-page')->name('home');
 Route::view('/how-it-works', 'pages.how-it-works')->name('how-it-works');
 Route::view('/terms', 'static.terms')->name('static.terms');
 Route::view('/privacy', 'static.privacy')->name('static.privacy');
+Route::view('/trophies', 'static.trophies')->name('static.trophies');
+Route::view('/how-it-works', 'static.how-it-works')->name('static.how-it-works');
 
 // Profiles
 

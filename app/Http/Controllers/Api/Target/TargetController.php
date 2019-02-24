@@ -17,7 +17,7 @@ class TargetController extends Controller
     public function index(Request $request)
     {
         if ($request->has('goal_id')) {
-            return Target::where('goal_id', $request->goal_id)->latest('created_at')->get();
+            return Target::where('goal_id', $request->goal_id)->orderBy('created_at', 'DESC')->get();
         }
 
         return Target::all();

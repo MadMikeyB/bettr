@@ -121,7 +121,7 @@ export default {
                 class="autocomplete-result"
                 :class="{ 'is-active': i === arrowCounter }"
             >
-                <i class="fas" :class="'fa-'+result"></i> {{ result }}
+                <i class="fa " :class="'fa-'+result"></i> {{ result }}
             </li>
         </ul>
     </div>

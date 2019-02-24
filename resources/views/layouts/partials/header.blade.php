@@ -15,7 +15,7 @@
 
                 @else
                     <li class="menu__item"><a href="{{route('login')}}" class="menu__link">Log In</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">How It Works</a></li>
+                    <li class="menu__item"><a href="{{route('static.how-it-works')}}" class="menu__link">How It Works</a></li>
                     <li class="menu__item"><a href="{{route('register')}}" class="menu__link menu__button">Join Free</a></li>
                 @endauth
             </ul>

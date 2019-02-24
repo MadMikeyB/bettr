@@ -54,7 +54,7 @@
                             </div>
                             <p class="icon-box__title"><strong>Unlock trophies</strong></p>
                             <p>The more you use Bettr, the more trophies you will unlock. These trophies will be displayed in pride of place on your profile and on your public goals.</p>
-                            <p>Glory hunter? <a href="">Check out the full list of trophies available to be unlocked here</a>.</p>
+                            <p>Glory hunter? <a href="{{route('static.trophies')}}">Check out the full list of trophies available to be unlocked here</a>.</p>
                         </div>
                        <div class="icon-box">
                             <div class="icon-box__icon">
