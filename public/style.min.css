@@ -905,6 +905,7 @@ blockquote {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 1.5rem;
+  overflow: hidden;
   border-radius: 0.5rem;
   transition: all 0.25s ease-in-out;
   width: 100%;
