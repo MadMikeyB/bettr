@@ -53,7 +53,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Set the route key name for the Project Model
+     * Set the route key name for the User Model
      */
     public function getRouteKeyName()
     {

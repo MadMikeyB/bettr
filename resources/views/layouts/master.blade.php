@@ -11,6 +11,15 @@
     @stack('styles-after')
     @stack('schema')
     @stack('meta')
+    <script>
+        window.Bettr = {!!
+            json_encode([
+                'homeUrl' => env('APP_URL'),
+                'signedIn' => auth()->check(),
+                'user'     => auth()->user()
+            ]);
+        !!}
+    </script>
 
     <title>@yield('title', 'Bettr')</title>
 </head>
@@ -25,7 +34,8 @@
 
 
     @stack('scripts-before')
-    <script src="{{mix('scripts.min.js')}}"></script>    
+    @routes
+    <script src="{{mix('scripts.min.js')}}"></script>
     @stack('scripts-after')
 </body>
 </html>

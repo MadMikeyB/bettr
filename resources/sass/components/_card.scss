@@ -1,3 +1,76 @@
 .card {
-    
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba($black, 0.18);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+
+    &:hover {
+        box-shadow: 0 2px 4px rgba($black, 0.4);
+
+        .card__image {
+            background: $gradient;
+        }
+
+        .card__icon {
+            background-image: $inverted_alt_gradient;
+        }
+    }
+
+    &__image {
+        background: $inverted_gradient;
+        border-radius: 1rem;
+        display: flex;
+        height: 15rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        align-items: center;
+        background-image: $alt_gradient;
+        border-radius: 5rem;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        height: 10rem;
+        justify-content: center;
+        width: 10rem;
+
+        i {
+            font-size: 5rem;
+            text-shadow: 0 2px 4px rgba($offblack, 0.8);
+        }
+    }
+
+    &__body {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        flex: 1;
+
+        p {
+            margin: 1rem 0;
+            margin-top: 0;
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 1.7rem;
+        margin-bottom: 0;
+    }
+
+    &__button {
+        margin-top: auto !important;
+
+        &--disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
 }

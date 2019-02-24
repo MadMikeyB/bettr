@@ -205,7 +205,7 @@
     }
 
     &__errors {
-        background-color: $primary;
+        background: $inverted_alt_gradient;
         color: $white;
         display: block;
         padding: 1rem;

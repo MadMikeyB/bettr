@@ -14,8 +14,19 @@ class GoalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->has('orderBy')) {
+            switch ($request->orderBy) {
+                case 'latest':
+                    return Goal::latest('created_at')->get();
+                    break;
+                
+                default:
+                    return Goal::all();
+                    break;
+            }
+        }
         return Goal::all();
     }
 

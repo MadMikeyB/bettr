@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Goal extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Sluggable;
 
     /**
      * @var array The attributes guarded from mass assignment
@@ -22,6 +23,33 @@ class Goal extends Model
     ];
 
     /**
+     * @var array The attributes passed to the JSON response
+     */
+    public $appends = ['excerpt'];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
+    /**
+     * Set the route key name for the User Model
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
      * A project belongs to a user
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -29,5 +57,15 @@ class Goal extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the excerpt Attribute
+     * 
+     * @return string
+     */
+    public function getExcerptAttribute()
+    {
+        return str_limit(strip_tags($this->description), 80);
     }
 }

@@ -12,13 +12,16 @@
     "dependencies": {
         "axios": "^0.18.0",
         "cross-env": "^5.2.0",
+        "font-awesome-picker": "^2.0.0",
         "import-glob-loader": "^1.1.0",
         "jquery": "^3.3.1",
         "laravel-mix": "^4.0.14",
         "lodash": "^4.17.5",
         "node-sass": "^4.11.0",
         "sass": "^1.17.0",
-        "vue": "^2.5.17"
+        "vee-validate": "^2.1.7",
+        "vue": "^2.5.17",
+        "vue-quill": "^1.5.1"
     },
     "devDependencies": {
         "animate-sass": "^0.8.2",

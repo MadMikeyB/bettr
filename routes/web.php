@@ -19,4 +19,6 @@ Route::view('/privacy', 'static.privacy')->name('static.privacy');
 
 // Profiles
 
-Route::get('/@{slug}', 'Profile\\ProfileController@show')->name('profiles.show');
+Route::get('/@{user}', 'Profile\\ProfileController@show')->name('profiles.show');
+
+Route::resource('goals', 'Goal\\GoalController');
