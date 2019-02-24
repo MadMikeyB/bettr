@@ -22,7 +22,7 @@
                             </div>
                             <p class="icon-box__title"><strong>Set a goal</strong></p>
                             <p>Start by setting yourself a goal. This can be as simple as "Read a book per month", or as difficult as "Learn a new language".</p>
-                            <p>Having trouble thinking of a goal? Check out our <a href="">Goal Suggestions</a>!</p>
+                            <p>Having trouble thinking of a goal? Check out our <a href="{{route('goals.index')}}">Goal Suggestions</a>!</p>
                         </div>
                         <div class="icon-box">
                             <div class="icon-box__icon">
