@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@push('meta')
+<title>Terms & Conditions - Bettr.</title>
+@endpush
 @section('content')
 @hero(['title' => 'Terms & Conditions'])
 @endhero

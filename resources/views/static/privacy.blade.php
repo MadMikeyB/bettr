@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@push('meta')
+<title>Privacy Policy - Bettr.</title>
+@endpush
 @section('content')
 @hero(['title' => 'Privacy Policy'])
 @endhero

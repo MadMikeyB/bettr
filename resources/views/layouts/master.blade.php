@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{mix('style.min.css')}}">
     @stack('styles-after')
     {!! SEO::generate(true) !!}
+    
     @stack('schema')
     @stack('meta')
     <script>
