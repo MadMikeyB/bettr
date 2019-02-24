@@ -2,7 +2,7 @@
     <div>
         <div v-if="this.user !== 0">
             <div class="form__group">
-                <label for="comment" class="form__label">Description <span class="form__required">*</span></label>
+                <label for="comment" class="form__label">Comment <span class="form__required">*</span></label>
                 <div class="quill-wrapper">
                     <quill :config="editorConfig" v-model="data.comment" name="comment" id="comment" v-validate="'required'" output="html"></quill>
                 </div>
@@ -44,7 +44,7 @@
                 },
                 editorConfig: {
                     theme: 'snow',
-                    placeholder: 'What\'s your goal?',
+                    placeholder: 'What do you think?',
                     scrollingContainer: '.ql-editor',
                     modules: {
                         toolbar: [
