@@ -70,7 +70,7 @@
                                 this.$root.$emit('commentCreated', data)
                                 this.data.comment = ''
                                 let element = document.getElementsByClassName('ql-editor');
-                                element[0].innerHTML = '';
+                                element[0].innerHTML = ' ';
                             })
                             .catch(error => {
                                 alert(error)
