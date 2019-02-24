@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@push('meta')
+@push('styles-before')
 <title>How it works - Bettr.</title>
 @endpush
 

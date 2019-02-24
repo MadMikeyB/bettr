@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@push('meta')
+@push('styles-before')
 <title>Terms & Conditions - Bettr.</title>
 @endpush
 @section('content')

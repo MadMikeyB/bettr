@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@push('meta')
+@push('styles-before')
 <title>Privacy Policy - Bettr.</title>
 @endpush
 @section('content')

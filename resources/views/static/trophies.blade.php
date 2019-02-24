@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@push('styles-before')
+<title>Trophy Cabinet - Bettr.</title>
+@endpush
 @section('content')
     @hero(['title' => 'Trophy Cabinet', 'subtitle' => 'Glory Hunters! This page is for you.'])
 
