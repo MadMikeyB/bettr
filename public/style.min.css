@@ -1252,6 +1252,10 @@ input:focus {
   height: 50rem;
   padding-top: 10rem;
 }
+.hero__flex-container--home {
+  height: 55rem;
+  padding-top: 5rem;
+}
 .hero__title {
   font-size: 8rem;
   font-weight: bold;
@@ -1289,15 +1293,16 @@ input:focus {
 .icon-box--right {
   text-align: right;
 }
+.icon-box p {
+  margin: 0.5rem 0;
+}
 .icon-box__title {
   display: block;
   font-size: 2rem;
-  margin: 0.5rem 0;
-  margin-bottom: 0;
   padding: 0;
-}
-.icon-box p {
-  margin: 0.5rem 0;
+  justify-self: flex-start;
+  margin: 0;
+  margin-bottom: auto !important;
 }
 .icon-box__icon {
   align-items: center;

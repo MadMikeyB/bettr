@@ -20,5 +20,6 @@ Route::view('/privacy', 'static.privacy')->name('static.privacy');
 // Profiles
 
 Route::get('/@{user}', 'Profile\\ProfileController@show')->name('profiles.show');
+Route::get('/@{user}/edit', 'Profile\\ProfileController@edit')->name('profiles.edit');
 
 Route::resource('goals', 'Goal\\GoalController');

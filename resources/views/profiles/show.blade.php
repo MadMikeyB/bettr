@@ -3,6 +3,11 @@
 
 @section('content')
     @hero(['title' => $user->name])
+        @auth
+            @if (auth()->id() === $user->id)
+                <a href="{{route('profiles.edit', $user)}}" class="hero__button">Edit Your Profile</a>
+            @endif
+        @endauth
     @endhero
 
     <div class="website">

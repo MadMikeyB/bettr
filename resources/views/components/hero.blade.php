@@ -1,5 +1,5 @@
 <section class="hero">
-    <div class="hero__flex-container">
+    <div class="hero__flex-container @if (Route::current()->getName() === 'home') hero__flex-container--home @endif">
         @if (Route::current()->getName() === 'home')
         <div class="icon-box" style="margin-bottom: 0rem">
             <div class="icon-box__icon icon-box__icon--alt icon-box__icon--large">
