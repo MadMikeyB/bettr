@@ -2,15 +2,9 @@
 
 @section('content')
 
-    <section class="hero">
-        <div class="hero__flex-container">
-            <h1 class="hero__title">Bettr.</h1>
-            <h2 class="hero__subtitle">Set Targets. Smash Goals.</h2>
-            <div class="hero__content">
-                <a href="" class="hero__button">Get Involved Today!</a>
-            </div>
-        </div>
-    </section>
+    @hero(['title' => 'Bettr.', 'subtitle' => 'Set Targets. Smash Goals.'])
+        <a href="" class="hero__button">Get Involved Today!</a>
+    @endhero
 
     <section class="website">
         <div class="website__flex-container">

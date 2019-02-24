@@ -30,6 +30,13 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+body.standalone {
+  background-color: #4D99E0;
+  background-image: linear-gradient(25deg, #B721FF 0%, #4D99E0 100%);
+  background-size: 200% 200%;
+  -webkit-animation: background-color 15s ease infinite;
+  animation: background-color 15s ease infinite;
+}
 body.js-mobile-nav-active {
   overflow: hidden;
 }
@@ -940,7 +947,7 @@ h1 > small {
   background-color: #78b2e8;
 }
 .form__checkbox:checked:before {
-  color: #4D99E0;
+  color: #B721FF;
   content: "\F00C";
   display: block;
   font-family: "Font Awesome 5 Free";
@@ -1425,6 +1432,13 @@ table {
 .website__flex-container {
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.register__flex-container--small {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @-webkit-keyframes background-color {

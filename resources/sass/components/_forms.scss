@@ -159,8 +159,8 @@
             position: relative;
 
             &:before {
-                color: $primary;
-                content: '\f00c';
+                color: $secondary;
+                content: '';
                 display: block;
                 font-family: "Font Awesome\ 5 Free";
                 font-size: 1.5rem;
@@ -171,7 +171,7 @@
                 transform: translate(-50%, -50%);
             }
 
-            background-color: lighten($primary, 10%);
+            background-color: $primary-lighter;
         }
     }
 

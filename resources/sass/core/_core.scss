@@ -26,14 +26,15 @@ body {
     min-height: 100vh;
     flex-direction: column;
 
-    // background-color: $primary;
-    // background-image: linear-gradient(25deg, $primary 0%, $secondary 100%);
-
-    // background-size: 200% 200%;
-    // -webkit-animation: background-color 15s ease infinite;
-    // -moz-animation: background-color 15s ease infinite;
-    // -o-animation: background-color 15s ease infinite;
-    // animation: background-color 15s ease infinite;
+    &.standalone {
+        background-color: $primary;
+        background-image: $inverted_gradient;
+        background-size: 200% 200%;
+        -webkit-animation: background-color 15s ease infinite;
+        -moz-animation: background-color 15s ease infinite;
+        -o-animation: background-color 15s ease infinite;
+        animation: background-color 15s ease infinite;
+    }
 
     &.js-mobile-nav-active {
         overflow: hidden;
