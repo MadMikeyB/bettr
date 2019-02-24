@@ -40,7 +40,11 @@
                         </div>
                     </div>
 
+
                     <div class="form__submit">
+                        <!-- <invisible-recaptcha sitekey="6LfUi5MUAAAAAIWM6m6mY9kkQf6s-gYaNE_mmMrE"  :callback="handleFormSubmit" class="button">
+                            Save Goal
+                        </invisible-recaptcha> -->
                         <a href="#" @click.prevent="handleFormSubmit" class="button">Save Goal</a>
                     </div>
                 </div>
@@ -74,9 +78,12 @@
 </template>
 
 <script>
+    import InvisibleRecaptcha from 'vue-invisible-recaptcha';
     export default {
         props: ['user'],
-        components: {},
+        components: {
+            "invisible-recaptcha": InvisibleRecaptcha
+        },
         mounted() {
 
         },
@@ -138,6 +145,6 @@
 .quill-wrapper > div {
     display: block;
     height: 30rem;
-    margin-bottom: 7.5rem;
+    margin-bottom: 10rem;
 }
 </style>

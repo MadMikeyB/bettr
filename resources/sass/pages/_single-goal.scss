@@ -1,0 +1,23 @@
+.single-goal {
+    margin-top: -15rem;
+    z-index: 201;
+
+    @media all and (max-width: $tablet) {
+        margin-top: 0;
+    }
+
+    &__flex-container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        z-index: 201;
+    }
+
+    .icon-box {
+        z-index: 202;
+        margin-bottom: -5rem;
+
+        @media all and (max-width: $tablet) {
+            margin-bottom: 0;
+        }
+    }
+}

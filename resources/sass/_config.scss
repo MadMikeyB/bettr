@@ -42,8 +42,9 @@ $gradient: linear-gradient(25deg, $primary 0%, $secondary 100%);
 $inverted_gradient: linear-gradient(25deg, $secondary 0%, $primary 100%);
 
 $alt_gradient: linear-gradient(25deg, #FBDA61 0%, #FF5ACD 100%);
-
 $inverted_alt_gradient: linear-gradient(25deg, #FF5ACD 0%, #FBDA61 100%);
+
+$alt_gradient_opacity: linear-gradient(25deg, rgba(#FBDA61, 0.5) 0%, rgba(#FF5ACD, 0.5) 100%);
 
 // SOCIAL NETWORK
 $facebook: #365397;

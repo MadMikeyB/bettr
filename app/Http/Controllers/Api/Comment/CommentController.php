@@ -14,8 +14,14 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if (($request->has('model_id')) && ($request->has('model_type'))) {
+            return Comment::where('commentable_id', $request->model_id)
+                            ->where('commentable_type', $request->model_type)
+                            ->latest('created_at')
+                            ->get();
+        }
         return Comment::all();
     }
 

@@ -22,7 +22,10 @@
 
     &__image {
         background: $inverted_gradient;
-        border-radius: 1rem;
+        border-bottom-right-radius: 5rem;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 5rem;
         display: flex;
         height: 15rem;
         align-items: center;

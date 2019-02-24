@@ -10,6 +10,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 import VueQuill from 'vue-quill'
 import VeeValidate from 'vee-validate';
+import moment from 'moment'
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,6 +31,7 @@ Vue.mixin({
 });
 Vue.use(VueQuill)
 Vue.use(VeeValidate);
+Vue.prototype.moment = moment
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

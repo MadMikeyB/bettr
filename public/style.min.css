@@ -843,7 +843,10 @@ h1 > small {
 }
 .card__image {
   background: linear-gradient(25deg, #B721FF 0%, #4D99E0 100%);
-  border-radius: 1rem;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 5rem;
   display: flex;
   height: 15rem;
   align-items: center;
@@ -886,6 +889,46 @@ h1 > small {
 .card__button--disabled {
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.comment {
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+}
+.comment__info {
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  background-image: linear-gradient(25deg, rgba(251, 218, 97, 0.5) 0%, rgba(255, 90, 205, 0.5) 100%);
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+}
+.comment__body {
+  padding: 1rem;
+  width: 100%;
+}
+.comment__author {
+  color: #000;
+  flex: 1;
+}
+.comment__author a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.comment__date {
+  color: #4d4d4d;
+}
+.comment__comment p {
+  margin: 0;
 }
 
 /*-- FORMS --*/
@@ -1264,6 +1307,16 @@ input:focus {
 .icon-box__icon i {
   font-size: 2.5rem;
 }
+.icon-box__icon--alt {
+  background: linear-gradient(25deg, #FBDA61 0%, #FF5ACD 100%);
+}
+.icon-box__icon--large {
+  height: 10rem;
+  width: 10rem;
+}
+.icon-box__icon--large i {
+  font-size: 5rem;
+}
 
 /* =============================================================
 
@@ -1536,6 +1589,30 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.single-goal {
+  margin-top: -15rem;
+  z-index: 201;
+}
+@media all and (max-width: 769px) {
+  .single-goal {
+    margin-top: 0;
+  }
+}
+.single-goal__flex-container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  z-index: 201;
+}
+.single-goal .icon-box {
+  z-index: 202;
+  margin-bottom: -5rem;
+}
+@media all and (max-width: 769px) {
+  .single-goal .icon-box {
+    margin-bottom: 0;
+  }
 }
 
 @-webkit-keyframes background-color {

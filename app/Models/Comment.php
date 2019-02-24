@@ -23,6 +23,11 @@ class Comment extends Model
     ];
 
     /**
+     * @var array The attributes to be appended to the JSON response.
+     */
+    public $with = ['user'];
+
+    /**
      * Get all of the owning commentable models.
      *
      * @return Illuminate\Database\Eloquent\Relations\MorphTo
@@ -30,5 +35,15 @@ class Comment extends Model
     public function commentable()
     {
         return $this->morphTo();
+    }
+
+    /**
+      * A comment belongs to a user
+      * 
+      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+      */ 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
