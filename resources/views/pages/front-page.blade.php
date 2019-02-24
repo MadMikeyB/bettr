@@ -74,13 +74,4 @@
             </div>
         </div>
     </section>
-
-
-{{-- <div class="button__container">
-    <a href="" class="button">I am a button</a>
-    <a href="" class="button button--alt">I am a button</a>
-    <a href="" class="button">I am a button</a>
-    <a href="" class="button button--alt">I am a button</a>
-    <a href="" class="button">I am a button</a>
-</div> --}}
 @endsection
