@@ -15,8 +15,8 @@
             <div class="footer__col">
                 <p><strong>Legal</strong></p>
                 <ul>
-                    <li><a href="#route('static.privacy')">Privacy Policy</a></li>
-                    <li><a href="#route('static.terms')">Terms &amp; Conditions</a></li>
+                    <li><a href="{{ route('static.privacy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ route('static.terms') }}">Terms &amp; Conditions</a></li>
                     <li>&copy; {{date('Y')}} &mdash; An Imperfect Product</li>
                 </ul>
             </div>

@@ -10,10 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
 
 Route::view('/', 'pages.front-page')->name('home');
-
-Auth::routes();
-
+Route::view('/how-it-works', 'pages.how-it-works')->name('how-it-works');
 Route::view('/terms', 'static.terms')->name('static.terms');
-Route::view('/privacy', 'static.terms')->name('static.privacy');
+Route::view('/privacy', 'static.privacy')->name('static.privacy');
+
+// Profiles
+
+Route::get('/@{slug}', 'Profile\\ProfileController@show')->name('profiles.show');

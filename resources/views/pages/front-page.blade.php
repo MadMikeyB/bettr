@@ -3,7 +3,11 @@
 @section('content')
 
     @hero(['title' => 'Bettr.', 'subtitle' => 'Set Targets. Smash Goals.'])
-        <a href="" class="hero__button">Get Involved Today!</a>
+        @auth
+        
+        @else
+            <a href="{{route('register')}}" class="hero__button">Get Involved Today!</a>
+        @endauth
     @endhero
 
     <section class="website">

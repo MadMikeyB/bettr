@@ -17,6 +17,7 @@ class AuthenticationTest extends TestCase
         // Given we have a user
         $data = [
             'name' => 'John Doe',
+            'slug' => 'john-doe',
             'email' => 'john@example.com',
             'password' => 'hunter2',
             'password_confirmation' => 'hunter2',
