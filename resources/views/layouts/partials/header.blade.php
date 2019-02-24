@@ -6,9 +6,9 @@
         <nav class="header__navigation">
             <ul class="menu">
                 @auth
-                    @if (auth()->user()->goals->count() < 1)
+                    {{-- @if (auth()->user()->goals->count() < 1)
                         <li class="menu__item"><a href="#" class="menu__link">Goal Suggestions</a></li>
-                    @endif
+                    @endif --}}
                     <li class="menu__item"><a href="{{route('goals.index')}}" class="menu__link">All Goals</a></li>
                     <li class="menu__item"><a href="{{route('profiles.show', auth()->user())}}" class="menu__link">{{auth()->user()->name}}</a></li>
                     <li class="menu__item"><a href="{{route('goals.create')}}" class="menu__link menu__button">Create your Goal!</a></li>
