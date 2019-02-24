@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <div class="form__group">
+                        <div class="form__group" v-if="this.user === goal.user_id">
                             <div class="target-input">
                                 <input type="text" class="form__input" v-model="target.title" @keyup.enter="enterTarget" placeholder="Enter a target...">
                                 <div class="form__addon">
@@ -130,16 +130,20 @@
                     })
             },
             toggleTarget(target) {
-                if (target.completed_at) {
-                    target.completed_at = null
-                } else {
-                    target.completed_at = moment().format('YYYY-MM-DD HH:mm:ss')
-                }
+                if (this.user === this.goal.user_id) {
+                    if (target.completed_at) {
+                        target.completed_at = null
+                    } else {
+                        target.completed_at = moment().format('YYYY-MM-DD HH:mm:ss')
+                    }
 
-                axios.patch(route('api.targets.update', target), target)
-                    .catch(error => {
-                        alert(error)
-                    })
+                    axios.patch(route('api.targets.update', target), target)
+                        .catch(error => {
+                            alert(error)
+                        })
+                } else {
+                    window.location.href = route('register')
+                }
             },
             selectDate() {
 

@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class GoalController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only('create');
+    }
+    
     /**
      * Display a listing of the resource.
      *

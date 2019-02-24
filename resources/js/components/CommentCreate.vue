@@ -1,20 +1,25 @@
 <template>
     <div>
-        <div class="form__group">
-            <label for="comment" class="form__label">Description <span class="form__required">*</span></label>
-            <div class="quill-wrapper">
-                <quill :config="editorConfig" v-model="data.comment" name="comment" id="comment" v-validate="'required'" output="html"></quill>
-            </div>
+        <div v-if="this.user !== 0">
+            <div class="form__group">
+                <label for="comment" class="form__label">Description <span class="form__required">*</span></label>
+                <div class="quill-wrapper">
+                    <quill :config="editorConfig" v-model="data.comment" name="comment" id="comment" v-validate="'required'" output="html"></quill>
+                </div>
 
-            <div v-if="errors.first('comment')">
-                <div class="form__errors">
-                    <p v-text="errors.first('comment')"></p>
+                <div v-if="errors.first('comment')">
+                    <div class="form__errors">
+                        <p v-text="errors.first('comment')"></p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="form__submit">
-            <a href="#" @click.prevent="handleFormSubmit" class="button">Add Comment</a>
+            <div class="form__submit">
+                <a href="#" @click.prevent="handleFormSubmit" class="button">Add Comment</a>
+            </div>
+        </div>
+        <div v-else style="max-width:200px;text-align: center;margin: 0 auto;">
+            <a :href="route('register')" class="button">Get Involved Today!</a>
         </div>
     </div>
 </template>

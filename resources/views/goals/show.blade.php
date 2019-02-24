@@ -11,7 +11,7 @@
 
 <show-goal 
     :goal="{{$goal->load('user')}}" 
-    :user="{{auth()->id()}}" 
+    :user="{{auth()->check() ? auth()->id() : 0}}" 
     :targets="{{json_encode($goal->targets)}}"
 >    
 </show-goal>
