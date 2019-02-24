@@ -80,6 +80,18 @@ class Goal extends Model
     }
 
     /**
+     * Get the Description Attribute
+     *
+     * @return string
+     */
+    public function getDescriptionAttribute($description)
+    {
+        $description = clean($description, 'youtube');
+
+        return $description;
+    }
+
+    /**
      * Get the excerpt Attribute
      * 
      * @return string

@@ -20,4 +20,16 @@ class Target extends Model
     public $casts = [
         'user_id' => 'int'
     ];
+
+    /**
+     * Get the Title Attribute
+     *
+     * @return string
+     */
+    public function getTitleAttribute($title)
+    {
+        $title = clean($title, 'youtube');
+
+        return $title;
+    }
 }

@@ -46,4 +46,16 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Get the Comment Attribute
+     *
+     * @return string
+     */
+    public function getCommentAttribute($comment)
+    {
+        $comment = clean($comment, 'youtube');
+
+        return $comment;
+    }
 }
